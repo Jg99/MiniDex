@@ -4,7 +4,7 @@
 
   <groupId>com.charizard</groupId>
   <artifactId>minidex</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0</version>
   <packaging>jar</packaging>
 
   <name>pokeapitest</name>
@@ -12,8 +12,37 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+      <maven.compiler.source>11</maven.compiler.source>
+      <maven.compiler.target>11</maven.compiler.target>
   </properties>
+  <build>
 
+    <plugins>
+      <plugin>
+        <artifactId>maven-assembly-plugin</artifactId>
+        <executions>
+        <execution>
+          <phase>package</phase>
+          <goals>
+          <goal>single</goal>
+          </goals>
+        </execution>
+        </executions>
+        <configuration>
+        <descriptorRefs>
+          <descriptorRef>jar-with-dependencies</descriptorRef>
+        </descriptorRefs>
+        <archive>
+          <manifest>
+            <addClasspath>true</addClasspath>
+            <classpathPrefix>lib/</classpathPrefix>
+            <mainClass>com.charizardbot.three.Main</mainClass>
+          </manifest>
+          </archive>
+        </configuration>
+      </plugin>
+      </plugins>
+    </build>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
