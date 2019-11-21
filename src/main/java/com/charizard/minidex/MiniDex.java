@@ -15,7 +15,7 @@ import org.json.JSONObject;
 // This is meant to be a test project that I created.
 //Copyleft 2019 James, Meme Man 2019#0820
 
-public class Main {
+public class MiniDex {
 private static String pokeurl = "https://pokeapi.co/api/v2/pokemon/"; // Either use the official PokeAPI or use your own self hosted version.
 private static String pkName = "";
 private static String sprURL = "";
