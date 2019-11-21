@@ -8,7 +8,7 @@ Example use:
 
 ```
 	public static void main(String[] args) {
-		String stats = MiniDex.getPokemonInfo("String here");
+		String stats = MiniDex.getPokemonInfo("Pikachu");
 		String pkName = MiniDex.getPokemonName();
 		String pkSprite = MiniDex.getSprite();
 		System.out.println("Name: " + pkName);
