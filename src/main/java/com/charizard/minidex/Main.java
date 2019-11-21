@@ -18,7 +18,8 @@ import org.json.JSONObject;
 public class Main {
 private static String pokeurl = "https://pokeapi.co/api/v2/pokemon/"; // Either use the official PokeAPI or use your own self hosted version.
 private static String pkName = "";
-    public static void main(String[] args) {
+private static String sprURL = "";
+    public static String getPokemonInfo(String pokemonName) {
         JSONObject pokeResult = getPokemon("151");
 
         String pkTyp = "N/A";
@@ -52,23 +53,21 @@ private static String pkName = "";
         String stats = "Main Type: " + pkTyp + "\nSecondary Type: " + pkTyp2 + "\nBase XP: " + baseXP + "\nHeight: " + pkHeight + " m\nWeight: " + pkWeight + 
         "kg\nNumber: " + id; // puts all the stats into one nice string
         pkName = pokeResult.get("name").toString();
-        System.out.println(stats);
-
-        //prints the pokemon name in case you wanted to enter a number.
-        System.out.println("Pokemon Name:" + pkName);
-
-
+        
         //sprite url for front_default
         JSONObject sprites = pokeResult.getJSONObject("sprites");
-        String sprite = sprites.get("front_default").toString();
-            System.out.println(sprite.toString());
+        sprURL = sprites.get("front_default").toString();
 
-        System.out.println(sprite);
-
+        //returns
+        return stats;
     }
     public static String getPokemonName()
     {
         return pkName;
+    }
+    public static String getSprite() 
+    {
+        return sprURL;
     }
     public static JSONObject getPokemon(String pokemon) {
 
