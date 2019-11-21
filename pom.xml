@@ -7,7 +7,7 @@
   <version>1.0</version>
   <packaging>jar</packaging>
 
-  <name>pokeapitest</name>
+  <name>MiniDex</name>
   <url>http://maven.apache.org</url>
 
   <properties>
